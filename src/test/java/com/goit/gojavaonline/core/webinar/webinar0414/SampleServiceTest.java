@@ -2,6 +2,7 @@ package com.goit.gojavaonline.core.webinar.webinar0414;
 
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.*;
 
 public class SampleServiceTest {
@@ -56,7 +57,7 @@ public class SampleServiceTest {
             sampleService.call(dog);
             fail("Exception should be thrown for too young dogs");  //remove and see what happens if method is broken
         } catch (DogTooYoungException e) {
-//            assertThat(e.getMessage(), containsString("young"));
+            assertThat(e.getMessage(), containsString("young"));
         }
     }
 }
